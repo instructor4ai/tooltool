@@ -1,0 +1,261 @@
+:root {
+	color: #e5e7eb;
+	background:
+		radial-gradient(circle at top, rgba(249, 115, 22, 0.22), transparent 30%),
+		linear-gradient(180deg, #020617 0%, #0f172a 100%);
+	font-family:
+		"Pretendard Variable", "SF Pro Display", "Apple SD Gothic Neo",
+		"Noto Sans KR", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+}
+
+button,
+select {
+	font: inherit;
+}
+
+.deck-shell {
+	display: grid;
+	grid-template-columns: 360px 1fr;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.deck-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	min-height: 0;
+	padding: 28px 24px;
+	border-right: 1px solid rgba(255, 255, 255, 0.08);
+	background: rgba(2, 6, 23, 0.72);
+	backdrop-filter: blur(18px);
+	overflow: hidden;
+}
+
+.deck-eyebrow {
+	margin: 0 0 6px;
+	font-size: 13px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.deck-title {
+	margin: 0;
+	font-size: 42px;
+	line-height: 1;
+	letter-spacing: -0.06em;
+}
+
+.deck-description {
+	margin: 14px 0 0;
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.deck-mode-switch {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+.deck-mode-switch button,
+.deck-list button {
+	border: 0;
+	cursor: pointer;
+}
+
+.deck-mode-switch button {
+	padding: 13px 14px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.deck-mode-switch button.is-active {
+	background: #f97316;
+	color: #fff7ed;
+}
+
+.deck-field label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.deck-field select {
+	width: 100%;
+	padding: 14px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 14px;
+	color: #f8fafc;
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.deck-stats {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 12px;
+}
+
+.deck-stats div {
+	padding: 16px;
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.04);
+}
+
+.deck-stats span {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.54);
+}
+
+.deck-stats strong {
+	font-size: 28px;
+	letter-spacing: -0.04em;
+}
+
+.deck-list {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: 8px;
+	min-height: 0;
+	overflow: auto;
+	padding-right: 4px;
+}
+
+.deck-list button {
+	display: grid;
+	grid-template-columns: 48px 1fr;
+	gap: 12px;
+	align-items: start;
+	width: 100%;
+	padding: 14px;
+	border-radius: 16px;
+	text-align: left;
+	background: transparent;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.deck-list button span {
+	font-size: 12px;
+	letter-spacing: 0.16em;
+	color: rgba(255, 255, 255, 0.38);
+}
+
+.deck-list button strong {
+	font-size: 15px;
+	line-height: 1.45;
+	font-weight: 600;
+}
+
+.deck-list button.is-selected {
+	background: rgba(249, 115, 22, 0.12);
+	color: #fff7ed;
+	outline: 1px solid rgba(249, 115, 22, 0.32);
+}
+
+.deck-main {
+	padding: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	min-width: 0;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.deck-topbar {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.deck-topbar p {
+	margin: 0 0 8px;
+	font-size: 13px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.46);
+}
+
+.deck-topbar h2 {
+	margin: 0;
+	font-size: 34px;
+	line-height: 1.1;
+	letter-spacing: -0.05em;
+}
+
+.deck-tip {
+	padding: 12px 14px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.06);
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 14px;
+	white-space: nowrap;
+}
+
+.deck-player-frame {
+	flex: 1;
+	min-height: 0;
+	padding: 18px;
+	border-radius: 28px;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.deck-player-frame > div {
+	width: 100%;
+}
+
+@media (max-width: 1100px) {
+	.deck-shell {
+		grid-template-columns: 1fr;
+	}
+
+	.deck-sidebar {
+		border-right: 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	.deck-list {
+		max-height: 280px;
+	}
+}
+
+@media (max-width: 720px) {
+	.deck-main,
+	.deck-sidebar {
+		padding: 18px;
+	}
+
+	.deck-topbar {
+		flex-direction: column;
+		align-items: start;
+	}
+
+	.deck-mode-switch,
+	.deck-stats {
+		grid-template-columns: 1fr;
+	}
+}
